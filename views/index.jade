@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    div.pricing-header.px-3.py-3.pt-md-5.pb-md-4.mx-auto.text-center
+        h1.display-4 liste de cadeaux
+    div.container
+        div.card-deck.mb-3.text-center
+            each list in wishLists
+                div.card.mb-4.box-shadow
+                    div.card-header
+                        h4.card-title.pricing-card-title #{list.name}
+
+                    div.card-body
+                        ul.list-unstyled.mt-3.mb-4
+                            each wish in list.cards
+                                li #{wish.name}
+                                    form.form-horizontal(name='gift-pick', action='/',method='post')
+                                        input.hidden(name='cardId',type='text',value="#{wish.id}" hidden)
+                                        input.btn.btn-lg.btn-block.btn-outline-primary(type='submit',value='prendre')
+
+    div.container
+        div.pricing-header.px-3.py-3.pt-md-5.pb-md-4.mx-auto.text-center
+            h1.display-4 déjà pris
+            ul.list-unstyled.mt-3.mb-4
+                each dejaPris in doneList
+                    li #{dejaPris.name}

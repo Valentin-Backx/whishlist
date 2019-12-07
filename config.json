@@ -1,0 +1,7 @@
+{
+    "TRELLO_API_ID" : "XXX",
+    "TRELLO_SERVER_TOKEN" : "XXX",
+    "TRELLO_API_SECRET" : "XXX",
+    "BOARD_LISTS_ID" : "XXX", //ID of your wishlist board
+    "PICKED_LIST_NAME" : "XXX" //Name of the card in which you want the "picked gifts" to be placed
+}

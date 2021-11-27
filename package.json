@@ -1,10 +1,10 @@
 {
   "name": "projets",
   "version": "1.0.0",
-  "main":"app.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node ./bin/www"
+    "start": "node ./bin/www"
   },
   "keywords": [
     "gift",
@@ -12,16 +12,18 @@
     "nodejs",
     "trello"
   ],
-  "engines":{
-    "node":"14.15.1"
+  "engines": {
+    "node": "14.15.1"
   },
-  "author":"Valentin Backx",
+  "author": "Valentin Backx",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "^1.11.0",
+    "linkify-html": "^3.0.4",
+    "linkifyjs": "^3.0.4",
     "mongodb": "^3.3.5",
     "morgan": "~1.9.1",
     "node-fetch": "^2.6.1",

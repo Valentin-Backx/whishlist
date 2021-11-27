@@ -10,6 +10,9 @@ const Trello = require('node-trello')
 const t = new Trello(process.env.TRELLO_API_ID, process.env.TRELLO_SERVER_TOKEN);
 var AllLists ;
 
+const linkify = require('linkifyjs');
+const linkifyHtml = require('linkify-html');
+
 
 function getAllCards(lists,listIndex,callback,res)
 {
@@ -19,6 +22,10 @@ function getAllCards(lists,listIndex,callback,res)
     return;
   }
   t.get("1/lists/"+lists[listIndex].id+"/cards",function(err,cards){
+    for(let i = 0;i<cards.length;i++)
+    {
+      cards[i].name = linkifyHtml(cards[i].name)
+    }
     if(lists[listIndex].name.includes("[OFFREUR]"))
     {
       res.doneLists.push({cards:cards,name:lists[listIndex].name.replace('[OFFREUR]','')})

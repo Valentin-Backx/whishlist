@@ -15,9 +15,9 @@ block content
                         ul.list-unstyled.mt-3.mb-4
                             each wish in list.cards
                                 li #{wish.name}
-                                    form.form-horizontal(name='gift-pick', action='/',method='post')
-                                        input.input.hidden(name='cardId',type='text',value="#{wish.id}" hidden)
-                                        input.takeButtonSubmit.btn.btn-lg.btn-block.btn-outline-primary(type='submit',value="J'offre ça!")
+                                form.form-horizontal(name='gift-pick', action='/',method='post')
+                                    input.input.hidden(name='cardId',type='text',value="#{wish.id}" hidden)
+                                    input.takeButtonSubmit.btn.btn-lg.btn-block.btn-outline-primary(type='submit',value="J'offre ça!")
 
     div.container
         div.pricing-header.px-3.py-3.pt-md-5.pb-md-4.mx-auto.text-center
@@ -36,8 +36,8 @@ block content
         $(document).ready(function(){
             /// linkify some shit
             $( "li" ).each(function( index ) {
-                $( this ).text(linkifyHtml($( this ).text()))
-            });
+                $( this ).html($( this ).text())
+            })
             $('.takeButtonSubmit').click(function(event){
                 event.preventDefault()
                 console.log(event)
